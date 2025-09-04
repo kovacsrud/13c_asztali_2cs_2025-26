@@ -1,1 +1,1 @@
-# 13c_asztali_2cs_2025-26
+# 13c Aszali alkalmazások 2.csop.
