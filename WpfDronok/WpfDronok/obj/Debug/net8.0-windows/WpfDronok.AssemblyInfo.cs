@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WpfDronok")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9eb1b3fc4534480237f6e0c65fda9fe200f9930b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e8d934c32d67be6c918e96e060f0fdd334465ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("WpfDronok")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WpfDronok")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

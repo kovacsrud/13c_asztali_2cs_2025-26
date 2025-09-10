@@ -59,4 +59,9 @@ public partial class MainWindow : Window
         TipusSzuresView tipusSzures = new TipusSzuresView(Dronok);
         tipusSzures.ShowDialog();
     }
+
+    private void menuitemMentes_Click(object sender, RoutedEventArgs e)
+    {
+        //Nem ebben az ablakban vagyunk.
+    }
 }
