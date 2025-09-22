@@ -1,0 +1,53 @@
+﻿<Window x:Class="SzinkronGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SzinkronGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="3" FontSize="20">
+            <MenuItem Header="Fájl">
+                <MenuItem x:Name="menuitemMegnyitas" Header="Megnyitás" Click="menuitemMegnyitas_Click"/>
+                <MenuItem x:Name="menuitemKilepes" Header="Kilépés" Click="menuitemKilepes_Click"/>
+            </MenuItem>
+            
+
+        </Menu>
+        <Image Source="/szinkronstudio.png" Grid.Row="1" Grid.RowSpan="3" Stretch="Fill" Margin="10" />
+        <TextBlock Text="Szinkronizált színészek" FontSize="50" Foreground="Green" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <ListBox x:Name="listboxNevek" Grid.Row="4" Grid.RowSpan="7" Margin="10" SelectionChanged="listboxNevek_SelectionChanged"/>
+        <TextBlock Text="Választott szinkron" FontSize="20" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+        <TextBlock Text="Színész neve:" FontSize="20" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+        <TextBlock Text="Film címe:" FontSize="20" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"/>
+        <TextBlock Text="Szerep:" FontSize="20" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"/>
+        <TextBlock Text="Magyar hangja:" FontSize="20" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center"/>
+        <TextBox x:Name="textboxSzineszNeve" Grid.Row="5" Grid.Column="2" FontSize="18" Margin="5,0,5,1"/>
+        <TextBox x:Name="textboxFilmCime" Grid.Row="6" Grid.Column="2" FontSize="18" Margin="5,0,5,1"/>
+        <TextBox x:Name="textboxSzerep" Grid.Row="7" Grid.Column="2" FontSize="18" Margin="5,0,5,1"/>
+        <TextBox x:Name="textboxMagyarHangja" Grid.Row="8" Grid.Column="2" FontSize="18" Margin="5,0,5,1"/>
+        <Button x:Name="buttonKorhatarosDb" Content="Színész korhatáros filmjeinek száma" Grid.Row="10" Grid.Column="1" Margin="5" Click="buttonKorhatarosDb_Click"/>
+        <TextBlock x:Name="textblockKorhatarosDb" Grid.Row="10" Grid.Column="3" Text="0 db" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Width="200"/>
+
+    </Grid>
+</Window>

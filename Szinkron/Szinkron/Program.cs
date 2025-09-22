@@ -45,7 +45,25 @@ namespace Szinkron
                 Console.WriteLine(ex.Message);                
             }
 
-            Console.ReadKey();
+
+            Console.Write("Adja meg a szinkronszínész nevét:");
+            var szineszNev=Console.ReadLine();
+
+            var szineszAdatok = szinkronhangok.FindAll(x => x.Magyarhang == szineszNev);
+
+            if (szineszAdatok.Count>0)
+            {
+                foreach (var i in szineszAdatok)
+                {
+                    Console.WriteLine($"{i.Szinesz},{i.Film.Cim},{i.Szerep},{i.Film.Ev}");
+                }
+            } else
+            {
+                Console.WriteLine("Nincs ilyen szinkronszínész!");
+            }
+
+
+                Console.ReadKey();
         }
     }
 }
