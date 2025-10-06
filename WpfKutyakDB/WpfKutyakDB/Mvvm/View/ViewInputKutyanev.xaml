@@ -12,7 +12,9 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
+        <TextBlock Text="Új kutyanév felvitele" x:Name="textblockCim" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="textboxKutyanev" Text="{Binding SelectedKutyanev.KutyaNev}" Width="300" FontSize="20" Height="30" Grid.Row="1"/>
+        <Button x:Name="buttonMentes" Content="Mentés" Grid.Row="2"  Width="300" Height="30" Click="buttonMentes_Click"/>
 
     </Grid>
 </Window>

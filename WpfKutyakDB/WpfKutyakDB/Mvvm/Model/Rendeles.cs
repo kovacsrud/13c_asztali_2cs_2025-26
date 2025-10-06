@@ -14,6 +14,6 @@ namespace WpfKutyakDB.Mvvm.Model
         public string FajtaNev { get; set; }
         public string KutyaNev { get; set; }
         public int Eletkor { get; set; }
-        public int UtolsoEll { get; set; }
+        public string UtolsoEll { get; set; }
     }
 }

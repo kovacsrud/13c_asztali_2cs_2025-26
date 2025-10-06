@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfKutyakDB.Mvvm.ViewModel;
 
 namespace WpfKutyakDB.Mvvm.View
 {
@@ -26,12 +27,36 @@ namespace WpfKutyakDB.Mvvm.View
 
         private void buttonUjKutyanev_Click(object sender, RoutedEventArgs e)
         {
-
+            var vm = DataContext as RendeloViewModel;
+            ViewInputKutyanev inputKutyanev = new ViewInputKutyanev(vm);
+            inputKutyanev.ShowDialog();
         }
 
         private void buttonTorolKutyanev_Click(object sender, RoutedEventArgs e)
         {
+            var vm = DataContext as RendeloViewModel;
+            if (vm.SelectedKutyanev!=null) {
 
+                if (vm.SelectedKutyanev.Id!=0)
+                {
+                    vm.TorolKutyanev(vm.SelectedKutyanev);
+                    vm.GetKutyanevek();
+                }
+
+                
+
+            } else
+            {
+                MessageBox.Show("Válassza ki a törölni kívánt nevet");
+            }
+        }
+             
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var vm = DataContext as RendeloViewModel;
+            ViewInputKutyanev inputKutyanev = new ViewInputKutyanev(true, vm);
+            inputKutyanev.ShowDialog();
         }
     }
 }
