@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="Rendelő" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Menu FontSize="18">
+            <MenuItem Header="Fájl" />
+            <MenuItem Header="Szerkesztés" />
+            <MenuItem Header="Adatok">
+                <MenuItem x:Name="menuitemKutyanev" Header="Kutyanevek" Click="menuitemKutyanev_Click"/>
+            </MenuItem>
+            <MenuItem Header="Súgó" />
+
+        </Menu>
 
     </Grid>
 </Window>

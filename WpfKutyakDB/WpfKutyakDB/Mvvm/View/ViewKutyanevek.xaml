@@ -15,7 +15,7 @@
             <RowDefinition Height="9*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.ColumnSpan="2"  />
+        <DataGrid ItemsSource="{Binding Kutyanevek}" SelectedItem="{Binding SelectedKutyanev}" Grid.ColumnSpan="2" ColumnWidth="*" IsReadOnly="True" />
         <Button x:Name="buttonUjKutyanev" Content="Új kutyanév" Width="200" Grid.Row="1" Height="30" Click="buttonUjKutyanev_Click"/>
         <Button x:Name="buttonTorolKutyanev" Content="Törlés" Width="200" Grid.Row="1" Grid.Column="1" Height="30" Click="buttonTorolKutyanev_Click"/>
 

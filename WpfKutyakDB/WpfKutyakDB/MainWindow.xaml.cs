@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfKutyakDB.Mvvm.View;
+using WpfKutyakDB.Mvvm.ViewModel;
 
 namespace WpfKutyakDB
 {
@@ -19,6 +21,14 @@ namespace WpfKutyakDB
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new RendeloViewModel();
+        }
+
+        private void menuitemKutyanev_Click(object sender, RoutedEventArgs e)
+        {
+            ViewKutyanevek kutyanevek=new ViewKutyanevek();
+            kutyanevek.DataContext= DataContext as RendeloViewModel;
+            kutyanevek.ShowDialog();
         }
     }
 }
