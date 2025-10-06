@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Mvvm\ViewModel\" />
-    <Folder Include="Mvvm\View\" />
   </ItemGroup>
 
   <ItemGroup>
