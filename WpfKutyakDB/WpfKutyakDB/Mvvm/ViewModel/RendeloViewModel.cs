@@ -15,9 +15,17 @@ namespace WpfKutyakDB.Mvvm.ViewModel
         public List<Kutyanev> Kutyanevek { get; set; }= new List<Kutyanev>();
         public Kutyanev SelectedKutyanev { get; set; } = new Kutyanev();
 
+        public List<Rendeles> Rendelesek { get; set; } = new List<Rendeles>();
+        public Rendeles SelectedRendeles { get; set; } = new Rendeles();
+
         public RendeloViewModel()
         {
             GetKutyanevek();     
+        }
+
+        public void GetRendelesek()
+        {
+            Rendelesek = DbRepo.GetRendelesek();
         }
 
         public void GetKutyanevek()
