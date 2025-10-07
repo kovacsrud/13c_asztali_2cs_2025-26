@@ -16,6 +16,7 @@
             <MenuItem Header="Szerkesztés" />
             <MenuItem Header="Adatok">
                 <MenuItem x:Name="menuitemKutyanev" Header="Kutyanevek" Click="menuitemKutyanev_Click"/>
+                <MenuItem x:Name="menuitemRendeles" Header="Rendelések adatai" Click="menuitemRendeles_Click"/>
             </MenuItem>
             <MenuItem Header="Súgó" />
 

@@ -193,7 +193,21 @@ namespace WpfKutyakDB
         {
             try
             {
+                using (SQLiteConnection connection=new SQLiteConnection(Config.connectionString))
+                {
+                    connection.Open();
+                    string insertCommand = "insert into kutya (fajtaid,nevid,eletkor,utolsoell) values(@fajtaid,@nevid,@eletkor,@utolsoell)";
+                    using (SQLiteCommand command=new SQLiteCommand(insertCommand,connection))
+                    {
+                        command.Parameters.AddWithValue("@fajtaid",rendeles.FajtaId);
+                        command.Parameters.AddWithValue("@nevid", rendeles.NevId);
+                        command.Parameters.AddWithValue("@eletkor", rendeles.Eletkor);
+                        command.Parameters.AddWithValue("@utolsoell", rendeles.UtolsoEll);
 
+                        var sorok = command.ExecuteNonQuery();
+                        MessageBox.Show($"{sorok} sor beszúrva!");
+                    }
+                }
             }
             catch (SQLiteException ex)
             {
@@ -209,7 +223,22 @@ namespace WpfKutyakDB
         {
             try
             {
+                using (SQLiteConnection connection = new SQLiteConnection(Config.connectionString))
+                {
+                    connection.Open();
+                    string updateCommand = "update kutya set fajtaid=@fajtaid nevid=@nevid eletkor=@eletkor utolsoell=@utolsoell where Id=@id";
+                    using (SQLiteCommand command = new SQLiteCommand(updateCommand, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", rendeles.Id);
+                        command.Parameters.AddWithValue("@fajtaid", rendeles.FajtaId);
+                        command.Parameters.AddWithValue("@nevid", rendeles.NevId);
+                        command.Parameters.AddWithValue("@eletkor", rendeles.Eletkor);
+                        command.Parameters.AddWithValue("@utolsoell", rendeles.UtolsoEll);
 
+                        var sorok = command.ExecuteNonQuery();
+                        MessageBox.Show($"{sorok} sor módosítva!");
+                    }
+                }
             }
             catch (SQLiteException ex)
             {

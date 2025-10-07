@@ -30,5 +30,12 @@ namespace WpfKutyakDB
             kutyanevek.DataContext= DataContext as RendeloViewModel;
             kutyanevek.ShowDialog();
         }
+
+        private void menuitemRendeles_Click(object sender, RoutedEventArgs e)
+        {
+            ViewRendelesek rendelesek = new ViewRendelesek();
+            rendelesek.DataContext= DataContext as RendeloViewModel;
+            rendelesek.ShowDialog();
+        }
     }
 }

@@ -20,7 +20,8 @@ namespace WpfKutyakDB.Mvvm.ViewModel
 
         public RendeloViewModel()
         {
-            GetKutyanevek();     
+            GetKutyanevek();
+            GetRendelesek();
         }
 
         public void GetRendelesek()
