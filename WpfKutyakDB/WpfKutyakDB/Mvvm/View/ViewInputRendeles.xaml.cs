@@ -40,16 +40,16 @@ namespace WpfKutyakDB.Mvvm.View
             DataContext = vm;
             textblockCim.Text = "Rendelési adat módosítása";
             Title = textblockCim.Text;
-            comboKutyafajtak.SelectedValue = vm.SelectedRendeles.FajtaId;
-            comboKutyanevek.SelectedValue = vm.SelectedRendeles.NevId;
+            //comboKutyafajtak.SelectedValue = vm.SelectedRendeles.FajtaId;
+            //comboKutyanevek.SelectedValue = vm.SelectedRendeles.NevId;
         }
 
         private void buttonMentes_Click(object sender, RoutedEventArgs e)
         {
             if (textboxEletkor.Text.Length>0 && textboxUtolsoEll.Text.Length==10) {
                 if (modosit) {
-                    vm.SelectedRendeles.FajtaId = (int)comboKutyafajtak.SelectedValue;
-                    vm.SelectedRendeles.NevId = (int)comboKutyanevek.SelectedValue;
+                  //  vm.SelectedRendeles.FajtaId = (int)comboKutyafajtak.SelectedValue;
+                  //  vm.SelectedRendeles.NevId = (int)comboKutyanevek.SelectedValue;
                     vm.ModositRendeles(vm.SelectedRendeles);
                     vm.GetRendelesek();
 

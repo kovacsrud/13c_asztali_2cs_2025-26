@@ -19,7 +19,7 @@ namespace WpfKutyakDB.Mvvm.ViewModel
         public Rendeles SelectedRendeles { get; set; } = new Rendeles();
 
         public List<Kutyafajta> Kutyafajtak { get; set; } = new List<Kutyafajta>();
-        public Kutyafajta SelectedKutyafajta { get; set; } = new Kutyafajta();
+        public Kutyafajta SelectedKutyafajta { get; set; } =new Kutyafajta();
 
         public RendeloViewModel()
         {
