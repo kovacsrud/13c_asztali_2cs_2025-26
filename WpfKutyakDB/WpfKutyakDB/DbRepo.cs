@@ -226,7 +226,7 @@ namespace WpfKutyakDB
                 using (SQLiteConnection connection = new SQLiteConnection(Config.connectionString))
                 {
                     connection.Open();
-                    string updateCommand = "update kutya set fajtaid=@fajtaid nevid=@nevid eletkor=@eletkor utolsoell=@utolsoell where Id=@id";
+                    string updateCommand = "update kutya set fajtaid=@fajtaid,nevid=@nevid,eletkor=@eletkor, utolsoell=@utolsoell where Id=@id";
                     using (SQLiteCommand command = new SQLiteCommand(updateCommand, connection))
                     {
                         command.Parameters.AddWithValue("@id", rendeles.Id);
@@ -242,7 +242,7 @@ namespace WpfKutyakDB
             }
             catch (SQLiteException ex)
             {
-                MessageBox.Show($"Adatbázis hiba:{ex.Message}");
+                MessageBox.Show($"Adatbázis hiba:{ex.StackTrace} {ex.Message}");
             }
             catch (Exception ex)
             {

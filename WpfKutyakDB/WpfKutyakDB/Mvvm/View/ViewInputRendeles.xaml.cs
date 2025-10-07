@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfKutyakDB.Mvvm.Model;
 using WpfKutyakDB.Mvvm.ViewModel;
 
 namespace WpfKutyakDB.Mvvm.View
@@ -27,6 +28,8 @@ namespace WpfKutyakDB.Mvvm.View
             InitializeComponent();
             this.vm = vm;
             DataContext = vm;
+            comboKutyafajtak.SelectedIndex = 0;
+            comboKutyanevek.SelectedIndex = 0;
         }
 
         public ViewInputRendeles(bool modosit,RendeloViewModel vm)
@@ -37,10 +40,46 @@ namespace WpfKutyakDB.Mvvm.View
             DataContext = vm;
             textblockCim.Text = "Rendelési adat módosítása";
             Title = textblockCim.Text;
+            comboKutyafajtak.SelectedValue = vm.SelectedRendeles.FajtaId;
+            comboKutyanevek.SelectedValue = vm.SelectedRendeles.NevId;
         }
 
         private void buttonMentes_Click(object sender, RoutedEventArgs e)
         {
+            if (textboxEletkor.Text.Length>0 && textboxUtolsoEll.Text.Length==10) {
+                if (modosit) {
+                    vm.SelectedRendeles.FajtaId = (int)comboKutyafajtak.SelectedValue;
+                    vm.SelectedRendeles.NevId = (int)comboKutyanevek.SelectedValue;
+                    vm.ModositRendeles(vm.SelectedRendeles);
+                    vm.GetRendelesek();
+
+                } else
+                {
+                    try
+                    {
+                        vm.SelectedRendeles.Eletkor = 0;
+                        vm.SelectedRendeles.UtolsoEll = "";
+                        Rendeles rendeles = new Rendeles
+                        {
+                            FajtaId = (int)comboKutyafajtak.SelectedValue,
+                            NevId = (int)comboKutyanevek.SelectedValue,
+                            Eletkor = Convert.ToInt32(textboxEletkor.Text),
+                            UtolsoEll = textboxUtolsoEll.Text
+                        };
+                        vm.UjRendeles(rendeles);
+                        vm.GetRendelesek();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Számot kell megadni az életkornál!");                  
+                    }
+                    
+                }
+
+            } else
+            {
+                MessageBox.Show("Helyes adatokat adjon meg");
+            }
 
         }
     }
