@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfKutyakDB.Mvvm.ViewModel;
 
 namespace WpfKutyakDB.Mvvm.View
 {
@@ -26,12 +27,21 @@ namespace WpfKutyakDB.Mvvm.View
 
         private void buttonUjRendeles_Click(object sender, RoutedEventArgs e)
         {
-
+            var vm = DataContext as RendeloViewModel;
+            ViewInputRendeles rendeles = new ViewInputRendeles(vm);
+            rendeles.ShowDialog();
         }
 
         private void buttonTorles_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var vm = DataContext as RendeloViewModel;
+            ViewInputRendeles rendeles = new ViewInputRendeles(true,vm);
+            rendeles.ShowDialog();
         }
     }
 }
