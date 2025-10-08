@@ -52,8 +52,10 @@ namespace WpfKutyakDB.Mvvm.View
                   //  vm.SelectedRendeles.NevId = (int)comboKutyanevek.SelectedValue;
                     vm.ModositRendeles(vm.SelectedRendeles);
                     vm.GetRendelesek();
+                    //A vm.SelectedRendeles itt null lesz valamiért
 
-                } else
+                }
+                else
                 {
                     try
                     {
