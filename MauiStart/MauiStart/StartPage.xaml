@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiStart.StartPage"
+             Title="StartPage" BackgroundColor="{StaticResource darkgreen}" >
+    <VerticalStackLayout VerticalOptions="Center" Margin="10">
+        <Label 
+            Text="Km/h átváltása m/s-ra"
+            FontAttributes="Bold"
+            FontSize="Large"
+            TextColor="{StaticResource moonstone}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry x:Name="entryKmh" TextColor="{StaticResource silverlakeblue}"  FontSize="Large" WidthRequest="300"/>
+        <Label x:Name="labelEredmeny" FontSize="Large" HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="{StaticResource silverlakeblue}" />
+        <Button x:Name="buttonSzamol" Text="Számolás" WidthRequest="300" Clicked="buttonSzamol_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
