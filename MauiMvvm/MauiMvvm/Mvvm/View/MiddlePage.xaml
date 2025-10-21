@@ -14,5 +14,7 @@
             FontSize="Large"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Button x:Name="buttonTovabb" Text="Tovább" Clicked="buttonTovabb_Clicked" />
+        <Button x:Name="buttonVissza" Text="Vissza" Clicked="buttonVissza_Clicked" />
     </VerticalStackLayout>
 </ContentPage>
