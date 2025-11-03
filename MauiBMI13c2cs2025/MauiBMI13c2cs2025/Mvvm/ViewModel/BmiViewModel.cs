@@ -10,20 +10,24 @@ namespace MauiBMI13c2cs2025.Mvvm.ViewModel
     [AddINotifyPropertyChangedInterface]
     public class BmiViewModel
     {
-        public double BmiErtek { get; set; } = 0;
-        public string BmiSzoveg { get; set; } = "";
+        public double BmiErtek { get; set; }
+        public string BmiSzoveg  => BmiErtek switch {
+            <=0=>"",
+            <18.5=>"sovány",
+            <25=>"normál",
+            <30=>"túlsúly",
+            <35=>"elhúzás",
+            _=>"súlyos elhízás"
+        };
         public double TestTomeg { get; set; } = 0;
         public double Magassag { get; set; } = 0;
 
         public void BmiSzamol()
         {
             BmiErtek = TestTomeg /Math.Pow(Magassag/100,2);
-            BmiSzoveges();
+            
         }
 
-        public void BmiSzoveges()
-        {
-
-        }
+        
     }
 }
