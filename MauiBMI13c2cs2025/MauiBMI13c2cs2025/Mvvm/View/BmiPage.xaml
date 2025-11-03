@@ -11,7 +11,7 @@
         <Entry Text="{Binding TestTomeg}"  Grid.Row="1" Grid.Column="1" HeightRequest="40" WidthRequest="200"/>
         <Entry Text="{Binding Magassag}" Grid.Row="2" Grid.Column="1" HeightRequest="40" WidthRequest="200"/>
 
-        <Label Text="{Binding BmiErtek , StringFormat='{0:F2}'}" Grid.Row="3" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Text="{Binding BmiErtek}" Grid.Row="3" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center"/>
         <Label Text="{Binding BmiSzoveg}" Grid.Row="4" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center"/>
         
 
