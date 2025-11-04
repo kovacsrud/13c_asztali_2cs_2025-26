@@ -9,17 +9,17 @@ public partial class BmiPage : ContentPage
 		InitializeComponent();
 	}
 
-    private void buttonSzamol_Clicked(object sender, EventArgs e)
-    {
-		var vm = BindingContext as BmiViewModel;
-		try
-		{
-            vm.BmiSzamol();
-        }
-		catch (Exception ex)
-		{
-			DisplayAlert("Hiba!", ex.Message, "Ok");			
-		}
+  //  private void buttonSzamol_Clicked(object sender, EventArgs e)
+  //  {
+		//var vm = BindingContext as BmiViewModel;
+		//try
+		//{
+  //          vm.BmiSzamol();
+  //      }
+		//catch (Exception ex)
+		//{
+		//	DisplayAlert("Hiba!", ex.Message, "Ok");			
+		//}
 		
-    }
+  //  }
 }
