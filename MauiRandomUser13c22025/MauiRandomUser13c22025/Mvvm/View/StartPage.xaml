@@ -7,8 +7,8 @@
     <Border VerticalOptions="Fill" Margin="10" Stroke="{StaticResource RuStroke}" BackgroundColor="{StaticResource RuHatter}" StrokeShape="RoundRectangle 0,40,40,0">
         <Grid RowDefinitions=".3*,.6*,.1*">
             <Label Text="RandomUser" TextColor="White" FontSize="24" FontFamily="Nexalight" HorizontalOptions="Center" VerticalOptions="End"/>
-            <Label Grid.Row="1" Text=".ME" TextColor="White" FontSize="76" FontFamily="Nexaheavy" VerticalOptions="Center" HorizontalOptions="Start"/>
-            <Button x:Name="buttonStart" Text="Tovább" TextColor="White" BackgroundColor="{StaticResource RuButtonBg}" Clicked="buttonStart_Clicked" />
+            <Label Grid.Row="1" Text=".ME" TextColor="White" FontSize="76" FontFamily="Nexaheavy" VerticalOptions="Start" HorizontalOptions="Center"/>
+            <Button Grid.Row="2" x:Name="buttonStart" Text="Tovább" TextColor="White" BackgroundColor="{StaticResource RuButtonBg}" Clicked="buttonStart_Clicked" />
 
         </Grid>
     </Border>
