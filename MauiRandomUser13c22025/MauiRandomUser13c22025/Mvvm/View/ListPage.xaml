@@ -6,7 +6,14 @@
 
     <Border VerticalOptions="Fill" Margin="10" Stroke="{StaticResource RuStroke}" BackgroundColor="{StaticResource RuHatter}" StrokeShape="RoundRectangle 0,40,40,0">
         <Grid RowDefinitions=".2*,.7*,.1*">
+            <Label Text="A felhasználók adatai:" TextColor="White" FontFamily="Nexaheavy" VerticalOptions="Center" HorizontalOptions="Center" />
             
+            <CollectionView Grid.Row="1">
+                
+            </CollectionView>
+
+            <Button Grid.Row="2" x:Name="buttonLetolt" BackgroundColor="{StaticResource RuButtonBg}" FontFamily="Nexaheavy" Text="Letöltés" Clicked="buttonLetolt_Clicked" />
+
 
         </Grid>
     </Border>

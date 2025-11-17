@@ -6,4 +6,9 @@ public partial class ListPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void buttonLetolt_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
