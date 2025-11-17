@@ -8,8 +8,24 @@
         <Grid RowDefinitions=".2*,.7*,.1*">
             <Label Text="A felhasználók adatai:" TextColor="White" FontFamily="Nexaheavy" VerticalOptions="Center" HorizontalOptions="Center" />
             
-            <CollectionView Grid.Row="1">
-                
+            <CollectionView x:Name="collectionUsers" Grid.Row="1" SelectionMode="Single" EmptyView="No users">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="2" BackgroundColor="{StaticResource RuStroke}" StrokeShape="RoundRectangle 80,80,80,80">
+                            <Grid ColumnDefinitions=".3*,.7*">
+                                <Border HorizontalOptions="Start" WidthRequest="80" StrokeShape="RoundRectangle 80,80,80,80" Margin="5">
+                                    <Image WidthRequest="80" HeightRequest="80" Source="{Binding picture.large}" />
+                                </Border>
+                                <HorizontalStackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start">
+                                    <Label Text="{Binding name.title}" FontSize="18" FontFamily="Nexaheavy" TextColor="White" Margin="0,0,2,0" />
+                                    <Label Text="{Binding name.first}" FontSize="18" FontFamily="Nexaheavy" TextColor="White" Margin="0,0,2,0" />
+                                    <Label Text="{Binding name.last}" FontSize="18" FontFamily="Nexaheavy" TextColor="White" Margin="0,0,2,0" />
+
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
             </CollectionView>
 
             <Button Grid.Row="2" x:Name="buttonLetolt" BackgroundColor="{StaticResource RuButtonBg}" FontFamily="Nexaheavy" Text="Letöltés" Clicked="buttonLetolt_Clicked" />
