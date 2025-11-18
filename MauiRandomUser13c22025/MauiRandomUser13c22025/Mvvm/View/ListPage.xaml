@@ -12,6 +12,19 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Border Margin="2" BackgroundColor="{StaticResource RuStroke}" StrokeShape="RoundRectangle 80,80,80,80">
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal"></VisualState>
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Black"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            
+                            
                             <Grid ColumnDefinitions=".3*,.7*">
                                 <Border HorizontalOptions="Start" WidthRequest="80" StrokeShape="RoundRectangle 80,80,80,80" Margin="5">
                                     <Image WidthRequest="80" HeightRequest="80" Source="{Binding picture.large}" />
