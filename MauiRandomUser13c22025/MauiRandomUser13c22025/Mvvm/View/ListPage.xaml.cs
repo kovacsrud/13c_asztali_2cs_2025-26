@@ -46,4 +46,10 @@ public partial class ListPage : ContentPage
 			collectionUsers.EmptyView = "Nincs internet hozzáférés";
 		}
     }
+
+    private void collectionUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+		var selectedUser = collectionUsers.SelectedItem as Result;
+		Navigation.PushAsync(new DetailPage {BindingContext=selectedUser });
+    }
 }
