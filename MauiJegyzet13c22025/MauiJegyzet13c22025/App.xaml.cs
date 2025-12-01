@@ -1,4 +1,6 @@
-﻿namespace MauiJegyzet13c22025
+﻿using MauiJegyzet13c22025.mvvm.view;
+
+namespace MauiJegyzet13c22025
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new JegyzetView();
         }
     }
 }
