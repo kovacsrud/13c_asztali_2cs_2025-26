@@ -38,8 +38,10 @@ public partial class JegyzetView : ContentPage
         try
         {
             var jegyzet=new Jegyzet { Cim=entryCim.Text, Szoveg=entrySzoveg.Text };
-            connection.Insert(jegyzet);
+            var result=connection.Insert(jegyzet);
+            DisplayAlert("Új jegyzet",$"{result} sor beszúrva","Ok");
             GetJegyzetek();
+            collectionJegyzetek.SelectedItem = null;
 
         }
         catch (Exception ex)
