@@ -22,8 +22,5 @@ public partial class JegyzetView : ContentPage
         Navigation.PushAsync(new JegyzetInput(true,vm));
     }
 
-    private void buttonTorol_Clicked(object sender, EventArgs e)
-    {
-
-    }
+   
 }
