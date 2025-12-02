@@ -3,10 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiJegyzet13c22025V2.Mvvm.View.JegyzetView"
              Title="JegyzetView">
-    <VerticalStackLayout>
+
+    <Grid RowDefinitions=".1*,.6*,.1*,.1*,.1*">
+    
         <Label 
             Text="Jegyzet app"
+            FontSize="26"
+            FontAttributes="Bold"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+        <CollectionView ItemsSource="{Binding Jegyzetek}" SelectionMode="Single" SelectedItem="{Binding AktualisJegyzet}" EmptyView="Nincsenek jegyzetek!" Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border BackgroundColor="LightBlue" StrokeShape="RoundRectangle 5,5,5,5" Margin="5" Padding="5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Cim}" />
+                            <Label Text="{Binding Szoveg}" />
+                            <DatePicker Date="{Binding Datum}" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button x:Name="buttonUj" Text="Új jegyzet" WidthRequest="150" Margin="5" FontSize="14" Clicked="buttonUj_Clicked"  Grid.Row="2"/>
+        <Button x:Name="buttonModosit" Text="Módosítás" WidthRequest="150" Margin="5" FontSize="14" Clicked="buttonModosit_Clicked" Grid.Row="3" />
+        <Button x:Name="buttonTorol" Text="Törlés" WidthRequest="150" Margin="5" FontSize="14" Clicked="buttonTorol_Clicked" Grid.Row="4" />
+
+
+    </Grid>
+
+
 </ContentPage>

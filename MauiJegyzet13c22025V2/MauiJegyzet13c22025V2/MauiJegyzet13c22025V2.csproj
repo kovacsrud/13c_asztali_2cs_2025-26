@@ -65,10 +65,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Mvvm\ViewModel\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="Mvvm\View\JegyzetView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -6,4 +6,19 @@ public partial class JegyzetView : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void buttonUj_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonModosit_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonTorol_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
