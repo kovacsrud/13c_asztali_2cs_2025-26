@@ -20,7 +20,7 @@ namespace MauiJegyzet13c22025V2.Mvvm.ViewModel
             GetJegyzetek();
         }
 
-        private void GetJegyzetek()
+        public void GetJegyzetek()
         {
             Jegyzetek = App.JegyzetRepo.GetItems();
         }
