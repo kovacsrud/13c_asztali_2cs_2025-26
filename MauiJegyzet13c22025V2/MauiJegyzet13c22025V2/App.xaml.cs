@@ -1,12 +1,17 @@
-﻿namespace MauiJegyzet13c22025V2
+﻿using MauiJegyzet13c22025V2.Mvvm.Model;
+using MauiJegyzet13c22025V2.Mvvm.View;
+using MauiJegyzet13c22025V2.Repository;
+
+namespace MauiJegyzet13c22025V2
 {
     public partial class App : Application
     {
-        public App()
+        public static BaseRepository<Jegyzet> JegyzetRepo {  get; private set; }
+        public App(BaseRepository<Jegyzet> repo)
         {
             InitializeComponent();
-
-            MainPage = new AppShell();
+            JegyzetRepo = repo;
+            MainPage = new NavigationPage(new JegyzetView());
         }
     }
 }
