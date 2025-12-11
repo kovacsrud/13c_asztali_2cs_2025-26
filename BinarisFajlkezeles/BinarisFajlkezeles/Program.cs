@@ -42,6 +42,22 @@ namespace BinarisFajlkezeles
                     Console.WriteLine($"Version:{BitConverter.ToInt16(version)}");
                     var flags=br.ReadBytes(2);
                     Console.WriteLine($"Flags:{BitConverter.ToInt16(flags)}");
+                    var compression=br.ReadBytes(2);
+                    Console.WriteLine($"Compression:{BitConverter.ToInt16(compression)}");
+                    var modtime=br.ReadBytes(2);
+                    Console.WriteLine($"Mod time:{BitConverter.ToInt16(modtime)}");
+                    var moddate = br.ReadBytes(2);
+                    Console.WriteLine($"Mod time:{BitConverter.ToInt16(moddate)}");
+
+                    var crc=br.ReadBytes(4);
+                    var compressed=br.ReadBytes(4);
+                    var uncompressed=br.ReadBytes(4);
+                    var fileNameLength = br.ReadBytes(2);
+                    var extraFieldLength=br.ReadBytes(2);
+                    var fileName=br.ReadBytes(BitConverter.ToInt16(fileNameLength));
+                    Console.WriteLine(Encoding.UTF8.GetString(fileName));
+                    var extrafield = br.ReadBytes(BitConverter.ToInt16(extraFieldLength));
+                    Console.WriteLine(Encoding.UTF8.GetString(extrafield));
 
                 }
             }
