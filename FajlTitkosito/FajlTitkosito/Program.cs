@@ -83,6 +83,25 @@ namespace FajlTitkosito
                 }
             }
 
+            ICryptoTransform dekodolo=aes.CreateDecryptor(visszaKulcs,initVektor);
+            byte[] dekodolt = dekodolo.TransformFinalBlock(visszaTartalom, 0, visszaTartalom.Length);
+
+            //Hash a visszaolvasott tartalomról
+            byte[] ellenorzoHash = sha256.ComputeHash(dekodolt);
+
+            if (Encoding.UTF8.GetString(ellenorzoHash)==Encoding.UTF8.GetString(visszaTartalomHash))
+            {
+                Console.WriteLine("A jelszó megfelelő!");
+                File.WriteAllBytes(Encoding.UTF8.GetString(visszaFajlnev), dekodolt);
+            } else
+            {
+                Console.WriteLine("A jelszó nem megfelelő!");
+            }
+
+            //Készítsen függvényt/osztályt, amellyel bármilyen típusú projektben 
+            //lehetne ezt a funkcionalitást alkalmazni.
+
+            //Tipp: Statikus osztály két metódussal (kódolás, dekódolás)
 
         }
     }
