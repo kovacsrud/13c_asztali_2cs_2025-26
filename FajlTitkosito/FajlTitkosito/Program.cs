@@ -44,8 +44,21 @@ namespace FajlTitkosito
             //IV - 16 byte//fájlnév hossza - 4 byte//fájlnév - változó//tartalom hash - 32 byte//titkos tartalom hossza - 4 byte//titkositott tartalom - változó
 
             var kodoltAdatok = new byte[aes.IV.Length+fajlnevHossz+fajlnevBin.Length+tartalomHash.Length+titkosTartalomHossz+titkositott.Length];
-            
 
+            using (MemoryStream ms=new MemoryStream(kodoltAdatok))
+            {
+                using (BinaryWriter writer=new BinaryWriter(ms))
+                {
+                    writer.Write(aes.IV);
+                    writer.Write(fajlnevHossz);
+                    writer.Write(fajlnevBin);
+                    writer.Write(tartalomHash);
+                    writer.Write(titkosTartalomHossz);
+                    writer.Write(titkositott);
+                }
+                File.WriteAllBytes("titkositott.bin",kodoltAdatok);
+                Console.WriteLine("Fájl kiírva!");
+            }
 
 
         }
