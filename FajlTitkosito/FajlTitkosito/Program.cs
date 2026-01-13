@@ -60,6 +60,29 @@ namespace FajlTitkosito
                 Console.WriteLine("Fájl kiírva!");
             }
 
+            //Visszafejtés?
+            byte[] fajl = File.ReadAllBytes("titkositott.bin");
+            int fajlLength=fajl.Length;
+            byte[] initVektor;
+            byte[] visszaFajlnev;
+            byte[] visszaTartalomHash;
+            byte[] visszaTartalom;
+            string jelszo = "Titok_12";
+            byte[] visszaKulcs=sha256.ComputeHash(Encoding.UTF8.GetBytes(jelszo));
+
+            using (MemoryStream ms=new MemoryStream(fajl))
+            {
+                using (BinaryReader reader=new BinaryReader(ms))
+                {
+                    initVektor = reader.ReadBytes(16);
+                    int fajlnevMeret = BitConverter.ToInt32(reader.ReadBytes(4));
+                    visszaFajlnev = reader.ReadBytes(fajlnevMeret);
+                    visszaTartalomHash = reader.ReadBytes(32);
+                    int visszaTartalomHossz=BitConverter.ToInt32(reader.ReadBytes(4));
+                    visszaTartalom = reader.ReadBytes(visszaTartalomHossz);
+                }
+            }
+
 
         }
     }
