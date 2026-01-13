@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36518.9 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FajlTitkosito", "FajlTitkosito\FajlTitkosito.csproj", "{EDB2517E-B5C4-4EEF-89AF-FF95B19A5EFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitkositoV2", "TitkositoV2\TitkositoV2.csproj", "{86A5E0B3-CB72-45F1-BBC6-E70DBB28F5FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EDB2517E-B5C4-4EEF-89AF-FF95B19A5EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDB2517E-B5C4-4EEF-89AF-FF95B19A5EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDB2517E-B5C4-4EEF-89AF-FF95B19A5EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A5E0B3-CB72-45F1-BBC6-E70DBB28F5FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A5E0B3-CB72-45F1-BBC6-E70DBB28F5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A5E0B3-CB72-45F1-BBC6-E70DBB28F5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A5E0B3-CB72-45F1-BBC6-E70DBB28F5FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
