@@ -4,6 +4,18 @@
              xmlns:local="clr-namespace:WpfKartya"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Color x:Key="sotetkek">#0A2463</Color>
+        <Color x:Key="kozepkek">#3E92CC</Color>
+        <Color x:Key="vilagos">#FFFAFF</Color>
+        <Color x:Key="bordo">#D8315B</Color>
+        <Color x:Key="fekete">#1E1B18</Color>
+
+        <SolidColorBrush x:Key="sotetkekBrush" Color="{StaticResource sotetkek}" />
+        <SolidColorBrush x:Key="kozepkekBrush" Color="{StaticResource kozepkek}" />
+        <SolidColorBrush x:Key="vilagosBrush" Color="{StaticResource vilagos}" />
+        <SolidColorBrush x:Key="bordoBrush" Color="{StaticResource bordo}" />
+        <SolidColorBrush x:Key="feketeBrush" Color="{StaticResource fekete}" />
+
+
     </Application.Resources>
 </Application>

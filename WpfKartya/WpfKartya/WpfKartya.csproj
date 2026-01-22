@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="Hatterek.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Hatterek.resx</DependentUpon>
+    </Compile>
     <Compile Update="Kartyak.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -17,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Hatterek.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Hatterek.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Kartyak.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Kartyak.Designer.cs</LastGenOutput>
