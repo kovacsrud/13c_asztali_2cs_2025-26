@@ -1,12 +1,13 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
-using PropertyChanged;
 using WpfKartya.mvvm.model;
 
 namespace WpfKartya.mvvm.viewmodel
@@ -34,9 +35,45 @@ namespace WpfKartya.mvvm.viewmodel
         {
             ResourceSet rsKartyaSet = rsKartyak.GetResourceSet(System.Globalization.CultureInfo.CurrentCulture,true,true);
 
+            foreach (System.Collections.DictionaryEntry kartya in rsKartyaSet)
+            {
+                string kartyanev=kartya.Key.ToString();
+                var kartyakepBin = (byte[])kartya.Value;
 
+                Pakli.Add(new Kartya(kartyanev, kartyakepBin));
+
+            }
 
             ResourceSet rsHatterSet = rsKartyak.GetResourceSet(System.Globalization.CultureInfo.CurrentCulture, true, true);
+
+            foreach (System.Collections.DictionaryEntry kartya in rsHatterSet)
+            {
+                
+                var kartyakepBin = (byte[])kartya.Value;
+
+                Hatterek.Add(GetKartyaImage(kartyakepBin));
+
+            }
+
+            Kassza = 1000;
+            Tet = 100;
+            SelectedHatter = Hatterek[1];
+            SelectedKartya = new Kartya();
+
+        }
+
+        private BitmapImage GetKartyaImage(byte[] kepadat)
+        {
+            using (MemoryStream ms = new MemoryStream(kepadat))
+            {
+                var image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.StreamSource = ms;
+                image.EndInit();
+
+                return image;
+            }
         }
     }
 }
