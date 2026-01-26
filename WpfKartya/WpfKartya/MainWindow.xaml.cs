@@ -46,5 +46,15 @@ namespace WpfKartya
         {
             DragMove();
         }
+
+        private void buttonPiros_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonFekete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
