@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfKartya.mvvm.viewmodel;
 
 namespace WpfKartya
 {
@@ -19,6 +20,8 @@ namespace WpfKartya
         public MainWindow()
         {
             InitializeComponent();
+            var vm=new KartyaViewModel();
+            DataContext = vm;
         }
 
         private void minGomb_MouseDown(object sender, MouseButtonEventArgs e)
@@ -49,12 +52,14 @@ namespace WpfKartya
 
         private void buttonPiros_Click(object sender, RoutedEventArgs e)
         {
-
+            var vm=DataContext as KartyaViewModel;
+            vm.SelectedKartya = vm.GetRandomKartya();
         }
 
         private void buttonFekete_Click(object sender, RoutedEventArgs e)
         {
-
+            var vm = DataContext as KartyaViewModel;
+            vm.SelectedKartya = vm.GetRandomKartya();
         }
     }
 }

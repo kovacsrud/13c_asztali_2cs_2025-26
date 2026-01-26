@@ -29,7 +29,8 @@ namespace WpfKartya.mvvm.viewmodel
 
         public KartyaViewModel()
         {
-                
+            InitPakli();
+            SelectedHatter = Hatterek[1];
         }
 
         public void InitPakli()
@@ -45,7 +46,7 @@ namespace WpfKartya.mvvm.viewmodel
 
             }
 
-            ResourceSet rsHatterSet = rsKartyak.GetResourceSet(System.Globalization.CultureInfo.CurrentCulture, true, true);
+            ResourceSet rsHatterSet = rsHatterek.GetResourceSet(System.Globalization.CultureInfo.CurrentCulture, true, true);
 
             foreach (System.Collections.DictionaryEntry kartya in rsHatterSet)
             {
