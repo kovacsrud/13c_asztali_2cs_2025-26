@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Imaging;
 using WpfKartya.mvvm.model;
 
@@ -60,6 +61,26 @@ namespace WpfKartya.mvvm.viewmodel
             SelectedHatter = Hatterek[1];
             SelectedKartya = new Kartya();
 
+        }
+
+        public Kartya GetRandomKartya()
+        {
+            Kartya kartya = new Kartya();
+            Random rnd=new Random();
+
+            if (Pakli.Count > 0)
+            {
+                var veletlenSzam=rnd.Next(0,Pakli.Count);
+                kartya = Pakli[veletlenSzam];
+                Pakli.RemoveAt(veletlenSzam);
+            } else
+            {
+                Jatekvege = true;
+
+                MessageBox.Show($"Elfogytak a kártyák! Kassza:{Kassza}");
+            }
+
+            return kartya;            
         }
 
         private BitmapImage GetKartyaImage(byte[] kepadat)
