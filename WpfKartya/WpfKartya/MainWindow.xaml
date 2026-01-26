@@ -39,5 +39,9 @@
             <fa:FontAwesome x:Name="maxGomb" Icon="WindowMaximize" Margin="0,5,5,0" FontSize="40" Foreground="{StaticResource kozepkekBrush}" MouseDown="maxGomb_MouseDown"/>
             <fa:FontAwesome x:Name="closeGomb" Icon="WindowClose" Margin="0,5,5,0" FontSize="40" Foreground="{StaticResource kozepkekBrush}" MouseDown="closeGomb_MouseDown"/>
         </WrapPanel>
+        <Image x:Name="randomKartya" Grid.Column="0" Grid.Row="2" Grid.RowSpan="6" Margin="5"/>
+        <Image x:Name="kartyaBack" Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Margin="5"/>
+        <Button x:Name="buttonPiros" Content="Piros" Grid.Column="2" Grid.Row="5" Width="200" Height="30"/>
+        <Button x:Name="buttonFekete" Content="Fekete" Grid.Column="2" Grid.Row="6" Width="200" Height="30"/>
     </Grid>
 </Window>
