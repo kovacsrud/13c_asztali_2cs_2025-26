@@ -41,7 +41,7 @@
         </WrapPanel>
         <Image x:Name="randomKartya" Grid.Column="0" Grid.Row="2" Grid.RowSpan="6" Margin="5"/>
         <Image x:Name="kartyaBack" Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Margin="5"/>
-        <Button x:Name="buttonPiros" Content="Piros" Grid.Column="2" Grid.Row="5" Width="200" Height="30"/>
-        <Button x:Name="buttonFekete" Content="Fekete" Grid.Column="2" Grid.Row="6" Width="200" Height="30"/>
+        <Button Style="{DynamicResource GombStyle1}" Foreground="{StaticResource vilagosBrush}" x:Name="buttonPiros" Content="Piros" Grid.Column="2" Grid.Row="5" Width="200" Height="30" Click="buttonPiros_Click"/>
+        <Button Style="{DynamicResource GombStyle1}" Foreground="{StaticResource vilagosBrush}" x:Name="buttonFekete" Content="Fekete" Grid.Column="2" Grid.Row="6" Width="200" Height="30" Click="buttonFekete_Click"/>
     </Grid>
 </Window>
