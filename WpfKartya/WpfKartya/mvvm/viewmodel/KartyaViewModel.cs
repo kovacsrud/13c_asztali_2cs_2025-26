@@ -91,7 +91,7 @@ namespace WpfKartya.mvvm.viewmodel
             } else
             {
                 Jatekvege = true;
-
+                OnJatekVege();
                 MessageBox.Show($"Elfogytak a kártyák! Kassza:{Kassza}");
             }
 

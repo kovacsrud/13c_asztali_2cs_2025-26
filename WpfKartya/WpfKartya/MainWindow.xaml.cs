@@ -123,7 +123,28 @@ namespace WpfKartya
 
         private void JatekVege(object sender, EventArgs e)
         {
+            var vm= DataContext as KartyaViewModel;
+            vm.Jatekvege = true;
+            buttonFekete.IsEnabled= false;
+            buttonNovel.IsEnabled= false;
+            buttonCsokkent.IsEnabled= false;
+            buttonPiros.IsEnabled= false;
+            kartyaBack.Visibility = Visibility.Hidden;
+            MessageBox.Show("Játék vége!");
+            buttonUjJatek.Visibility = Visibility.Visible;
+        }
 
+        private void buttonUjJatek_Click(object sender, RoutedEventArgs e)
+        {
+            var vm = DataContext as KartyaViewModel;
+            vm.Jatekvege = false;
+            vm.InitPakli();
+            buttonFekete.IsEnabled = true;
+            buttonNovel.IsEnabled = true;
+            buttonCsokkent.IsEnabled = true;
+            buttonPiros.IsEnabled = true;
+            kartyaBack.Visibility = Visibility.Visible;
+            buttonUjJatek.Visibility = Visibility.Hidden;
         }
     }
 }
