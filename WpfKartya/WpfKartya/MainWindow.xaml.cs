@@ -54,12 +54,70 @@ namespace WpfKartya
         {
             var vm=DataContext as KartyaViewModel;
             vm.SelectedKartya = vm.GetRandomKartya();
+
+            if (vm.SelectedKartya.FeketeVagyPiros==2 && !vm.Jatekvege)
+            {
+                vm.Kassza += vm.Tet;
+                if (vm.Tet>vm.Kassza)
+                {
+                    vm.Tet = vm.Kassza;
+                }
+            }
+
+            if(vm.SelectedKartya.FeketeVagyPiros!=2 && !vm.Jatekvege)
+            {
+                vm.Kassza -= vm.Tet;
+                if (vm.Tet > vm.Kassza)
+                {
+                    vm.Tet = vm.Kassza;
+                }
+            }
+
+
         }
 
         private void buttonFekete_Click(object sender, RoutedEventArgs e)
         {
             var vm = DataContext as KartyaViewModel;
             vm.SelectedKartya = vm.GetRandomKartya();
+
+            if (vm.SelectedKartya.FeketeVagyPiros == 1 && !vm.Jatekvege)
+            {
+                vm.Kassza += vm.Tet;
+                if (vm.Tet > vm.Kassza)
+                {
+                    vm.Tet = vm.Kassza;
+                }
+            }
+
+            if (vm.SelectedKartya.FeketeVagyPiros != 1 && !vm.Jatekvege)
+            {
+                vm.Kassza -= vm.Tet;
+                if (vm.Tet > vm.Kassza)
+                {
+                    vm.Tet = vm.Kassza;
+                }
+            }
+
+
+        }
+
+        private void buttonCsokkent_Click(object sender, RoutedEventArgs e)
+        {
+            var vm = DataContext as KartyaViewModel;
+            if (vm.Tet<=vm.Kassza && vm.Tet>100)
+            {
+                vm.Tet -= 100;
+            }
+        }
+
+        private void buttonNovel_Click(object sender, RoutedEventArgs e)
+        {
+            var vm = DataContext as KartyaViewModel;
+            if (vm.Tet < vm.Kassza)
+            {
+                vm.Tet += 100;
+            } 
         }
     }
 }
