@@ -22,6 +22,7 @@ namespace WpfKartya
             InitializeComponent();
             var vm=new KartyaViewModel();
             DataContext = vm;
+            vm.EventJatekVege += JatekVege;
         }
 
         private void minGomb_MouseDown(object sender, MouseButtonEventArgs e)
@@ -118,6 +119,11 @@ namespace WpfKartya
             {
                 vm.Tet += 100;
             } 
+        }
+
+        private void JatekVege(object sender, EventArgs e)
+        {
+
         }
     }
 }

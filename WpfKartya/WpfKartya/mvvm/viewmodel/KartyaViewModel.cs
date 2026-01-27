@@ -20,9 +20,23 @@ namespace WpfKartya.mvvm.viewmodel
         public List<BitmapImage> Hatterek { get; set; }= new List<BitmapImage>();
         public Kartya SelectedKartya { get; set; } = new Kartya();
         public BitmapImage SelectedHatter { get; set; } = new BitmapImage();
-        public int Kassza { get; set; } = 1000;
+
+        private int kassza = 1000;
+        public int Kassza { 
+            get { return kassza; } 
+            set
+            {
+                kassza = value;
+                if (kassza <= 0)
+                {
+                    OnJatekVege();
+                }
+            }
+        }
         public int Tet { get; set; } = 100;
         public bool Jatekvege { get; set; } = false;
+
+        public EventHandler EventJatekVege;
 
         ResourceManager rsKartyak = new ResourceManager("WpfKartya.Kartyak",Assembly.GetExecutingAssembly());
         ResourceManager rsHatterek = new ResourceManager("WpfKartya.Hatterek", Assembly.GetExecutingAssembly());
@@ -96,6 +110,11 @@ namespace WpfKartya.mvvm.viewmodel
 
                 return image;
             }
+        }
+
+        protected virtual void OnJatekVege()
+        {
+            EventJatekVege.Invoke(this, EventArgs.Empty);
         }
     }
 }
