@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfKutyakEF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfKutyakEF"
+        mc:Ignorable="d"
+        Title="Rendelő" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu FontSize="16">
+            <MenuItem Header="Fájl"/>
+            <MenuItem Header="Szerkesztés"/>
+            <MenuItem Header="Adatok kezelése">
+                <MenuItem x:Name="menuitemRendeles" Header="Rendelési adatok" Click="menuitemRendeles_Click"/>
+                <MenuItem x:Name="menuitemKutyanevek" Header="Kutyanevek" Click="menuitemKutyanevek_Click"/>
+                <MenuItem x:Name="menuitemKutyafajtak" Header="Kutyafajták" Click="menuitemKutyafajtak_Click"/>
+            </MenuItem>
+            <MenuItem Header="Súgó"/>
+        </Menu>
+
+    </Grid>
+</Window>
