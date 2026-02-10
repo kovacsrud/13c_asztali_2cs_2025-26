@@ -32,17 +32,27 @@ namespace WpfKutyakEF.mvvm.view
 
         private void buttonTorol_Click(object sender, RoutedEventArgs e)
         {
-
+            var vm = DataContext as KutyaViewModel;
+            var valasz = MessageBox.Show("Biztosan törli?","Törlés",MessageBoxButton.OKCancel,MessageBoxImage.Question);
+            if (valasz==MessageBoxResult.OK && vm.SelectedKutya!=null)
+            {
+                vm.Kutyak.Remove(vm.SelectedKutya);
+                vm.DbMentes();
+            }
         }
 
         private void buttonUj_Click(object sender, RoutedEventArgs e)
         {
-
+            var vm = DataContext as KutyaViewModel;
+            InputKutyaView inputKutya = new InputKutyaView(vm);
+            inputKutya.ShowDialog();
         }
 
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            var vm = DataContext as KutyaViewModel;
+            InputKutyaView inputKutya = new InputKutyaView(vm,true);
+            inputKutya.ShowDialog();
         }
     }
 }
