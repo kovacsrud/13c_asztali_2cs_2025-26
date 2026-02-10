@@ -23,5 +23,10 @@ namespace WpfKutyakEF.mvvm.view
         {
             InitializeComponent();
         }
+
+        private void buttonTorol_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

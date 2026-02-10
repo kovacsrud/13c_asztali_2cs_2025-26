@@ -11,8 +11,12 @@
             <RowDefinition Height="9*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid ColumnWidth="*" />
-        <Button x:Name="buttonMentes" Content="Mentés" Grid.Row="1" Width="200" Height="30"/>
+        <DataGrid ItemsSource="{Binding Kutyanevek}" AutoGenerateColumns="False" ColumnWidth="*" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kutyanév" Binding="{Binding Kutyanev}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="buttonMentes" Content="Mentés" Grid.Row="1" Width="200" Height="30" Click="buttonMentes_Click"/>
 
     </Grid>
 </Window>
