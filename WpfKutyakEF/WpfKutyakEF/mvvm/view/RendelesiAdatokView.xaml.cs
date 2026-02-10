@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfKutyakEF.mvvm.model;
+using WpfKutyakEF.mvvm.viewmodel;
 
 namespace WpfKutyakEF.mvvm.view
 {
@@ -19,12 +21,26 @@ namespace WpfKutyakEF.mvvm.view
     /// </summary>
     public partial class RendelesiAdatokView : Window
     {
+       
+
         public RendelesiAdatokView()
         {
             InitializeComponent();
+           
+            
         }
 
         private void buttonTorol_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonUj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }

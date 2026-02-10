@@ -14,7 +14,7 @@
         <DataGrid ItemsSource="{Binding Kutyak}" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" SelectedItem="{Binding SelectedKutya}" MouseDoubleClick="DataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Életkor" Binding="{Binding Eletkor}"/>
-                <DataGridTextColumn Header="Utolsó ellenőrzés" Binding="{Binding UtolsoEll}" />
+                <DataGridTextColumn Header="Utolsó ellenőrzés" Binding="{Binding Utolsoell}" />
                 <DataGridTextColumn Header="Fajta" Binding="{Binding Fajta.Nev}" />
                 <DataGridTextColumn Header="Kutya neve" Binding="{Binding Nev.Kutyanev}" />
             </DataGrid.Columns>
