@@ -45,5 +45,12 @@ namespace WpfMagyarorszagEF
             megyek.ShowDialog();
 
         }
+
+        private void menuitemMegyeSzures_Click(object sender, RoutedEventArgs e)
+        {
+            var vm = DataContext as TelepulesViewModel;
+            MegyeSzuresView megyeSzures=new MegyeSzuresView {DataContext= vm };
+            megyeSzures.ShowDialog();
+        }
     }
 }
