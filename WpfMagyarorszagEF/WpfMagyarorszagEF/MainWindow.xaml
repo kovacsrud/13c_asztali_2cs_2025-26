@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu FontSize="16">
+            <MenuItem Header="Fájl" />
+            <MenuItem Header="Szerkesztes" />
+            <MenuItem Header="Települések">
+                <MenuItem x:Name="menuitemJogallasok" Header="Jogállások" Click="menuitemJogallasok_Click"/>
+                <MenuItem x:Name="menuitemTelepulesek" Header="Települések" Click="menuitemTelepulesek_Click"/>
+                <MenuItem x:Name="menuitemMegyek" Header="Megyék" Click="menuitemMegyek_Click"/>
+            </MenuItem>
+
+        </Menu>
 
     </Grid>
 </Window>

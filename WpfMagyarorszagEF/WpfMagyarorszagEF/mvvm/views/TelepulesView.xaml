@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMagyarorszagEF.mvvm.views"
         mc:Ignorable="d"
-        Title="TelepulesView" Height="450" Width="800">
+        Title="Magyarország települései" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding Telepulesek}" AutoGenerateColumns="False" ColumnWidth="*" SelectedItem="{Binding SelectedTelepules}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Irányítószám" Binding="{Binding Irszam}" />
+                <DataGridTextColumn Header="Név" Binding="{Binding Nev}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

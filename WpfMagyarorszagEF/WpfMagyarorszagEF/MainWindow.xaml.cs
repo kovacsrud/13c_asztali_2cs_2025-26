@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfMagyarorszagEF.mvvm.viewmodel;
+using WpfMagyarorszagEF.mvvm.views;
 
 namespace WpfMagyarorszagEF
 {
@@ -19,6 +21,27 @@ namespace WpfMagyarorszagEF
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new TelepulesViewModel();
+        }
+
+        private void menuitemJogallasok_Click(object sender, RoutedEventArgs e)
+        {
+            var vm=DataContext as TelepulesViewModel;
+            JogallasView jogallasok=new JogallasView { DataContext= vm };
+            jogallasok.ShowDialog();
+        }
+
+        private void menuitemTelepulesek_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void menuitemMegyek_Click(object sender, RoutedEventArgs e)
+        {
+            var vm = DataContext as TelepulesViewModel;
+            MegyeView megyek = new MegyeView { DataContext= vm };
+            megyek.ShowDialog();
+
         }
     }
 }

@@ -21,8 +21,6 @@
 
   <ItemGroup>
     <Folder Include="mvvm\model\" />
-    <Folder Include="mvvm\viewmodel\" />
-    <Folder Include="mvvm\views\" />
   </ItemGroup>
 
 </Project>

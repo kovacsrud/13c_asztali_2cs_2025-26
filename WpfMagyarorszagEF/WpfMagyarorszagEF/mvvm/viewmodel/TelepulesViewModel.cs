@@ -19,6 +19,10 @@ namespace WpfMagyarorszagEF.mvvm.viewmodel
         public ObservableCollection<Megyek> Megyek { get; set; }
         public ObservableCollection<Telepulesek> Telepulesek { get; set; }
 
+        public Telepulesek SelectedTelepules { get; set; }
+        public Jogalla SelectedJogallas { get; set; }
+        public Megyek SelectedMegye { get; set; }
+
         public TelepulesViewModel()
         {
             context = new MagyarTelepulesekContext();

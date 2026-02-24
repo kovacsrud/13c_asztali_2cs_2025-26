@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfMagyarorszagEF.mvvm.viewmodel;
 
 namespace WpfMagyarorszagEF.mvvm.views
 {
@@ -22,6 +23,12 @@ namespace WpfMagyarorszagEF.mvvm.views
         public MegyeView()
         {
             InitializeComponent();
+        }
+
+        private void buttonMentes_Click(object sender, RoutedEventArgs e)
+        {
+            var vm=DataContext as TelepulesViewModel;
+            vm.DbMentes();
         }
     }
 }

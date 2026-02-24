@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMagyarorszagEF.mvvm.views"
         mc:Ignorable="d"
-        Title="JogallasView" Height="450" Width="800">
+        Title="Jogállások" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding Jogallasok}" AutoGenerateColumns="False" ColumnWidth="*" SelectedItem="{Binding SelectedJogallas}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Súly" Binding="{Binding Suly}" />
+                <DataGridTextColumn Header="Jogállás" Binding="{Binding Jogallas}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="buttonMentes" Content="Mentés" Grid.Row="1" Width="200" Height="30" Click="buttonMentes_Click"/>
+
     </Grid>
 </Window>

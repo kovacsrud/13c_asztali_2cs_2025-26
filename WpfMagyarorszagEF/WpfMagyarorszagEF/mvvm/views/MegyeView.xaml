@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="MegyeView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding Megyek}" AutoGenerateColumns="False" ColumnWidth="*" SelectedItem="{Binding SelectedMegye}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kód" Binding="{Binding Kod}" />
+                <DataGridTextColumn Header="Név" Binding="{Binding Nev}" />
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <Button x:Name="buttonMentes" Content="Mentés" Width="200" Height="30" Grid.Row="1" Click="buttonMentes_Click" />
+
     </Grid>
 </Window>
