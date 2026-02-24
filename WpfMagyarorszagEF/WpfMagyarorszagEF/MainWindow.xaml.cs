@@ -33,7 +33,9 @@ namespace WpfMagyarorszagEF
 
         private void menuitemTelepulesek_Click(object sender, RoutedEventArgs e)
         {
-
+            var vm = DataContext as TelepulesViewModel;
+            TelepulesView telepulesek=new TelepulesView {DataContext= vm };
+            telepulesek.ShowDialog();
         }
 
         private void menuitemMegyek_Click(object sender, RoutedEventArgs e)

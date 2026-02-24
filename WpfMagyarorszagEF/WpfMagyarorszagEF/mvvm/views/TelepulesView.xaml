@@ -15,6 +15,10 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Irányítószám" Binding="{Binding Irszam}" />
                 <DataGridTextColumn Header="Név" Binding="{Binding Nev}" />
+                <DataGridTextColumn Header="Terület" Binding="{Binding Terulet}" />
+                <DataGridTextColumn Header="Népesség" Binding="{Binding Nepesseg}" />
+                <DataGridTextColumn Header="Jogállás" Binding="{Binding JogallasNavigation.Jogallas}" />
+                <DataGridTextColumn Header="Megye" Binding="{Binding MegyekodNavigation.Nev}" />
             </DataGrid.Columns>
         </DataGrid>
 
