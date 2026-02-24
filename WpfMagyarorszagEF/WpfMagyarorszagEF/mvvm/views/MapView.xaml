@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMagyarorszagEF.mvvm.views"
+        xmlns:map="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         mc:Ignorable="d"
-        Title="MapView" Height="450" Width="800">
+        Title="Térkép" Height="450" Width="800">
     <Grid>
-        
+        <map:Map x:Name="map" CredentialsProvider="zVWTUPkxSwji0BMyzysY~cIk-YGZJEFaKcp3JRA8ZPg~Au50Vb-0zdUZnWCELBWU6fxGApT5yu6uAVMQ31ttsoTyCwKyuoL6UQ6qrFGLM4g7" />
     </Grid>
 </Window>

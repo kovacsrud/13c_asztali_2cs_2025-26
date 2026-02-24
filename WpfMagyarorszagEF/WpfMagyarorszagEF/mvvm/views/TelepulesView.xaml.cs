@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfMagyarorszagEF.mvvm.viewmodel;
 
 namespace WpfMagyarorszagEF.mvvm.views
 {
@@ -22,6 +23,13 @@ namespace WpfMagyarorszagEF.mvvm.views
         public TelepulesView()
         {
             InitializeComponent();
+        }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var vm=DataContext as TelepulesViewModel;
+            MapView map=new MapView(vm);
+            map.ShowDialog();
         }
     }
 }

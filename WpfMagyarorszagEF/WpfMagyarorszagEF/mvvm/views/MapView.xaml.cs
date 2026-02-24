@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfMagyarorszagEF.mvvm.viewmodel;
 
 namespace WpfMagyarorszagEF.mvvm.views
 {
@@ -19,9 +20,11 @@ namespace WpfMagyarorszagEF.mvvm.views
     /// </summary>
     public partial class MapView : Window
     {
-        public MapView()
+        public MapView(TelepulesViewModel vm)
         {
             InitializeComponent();
+            map.Center = new Microsoft.Maps.MapControl.WPF.Location(vm.SelectedTelepules.Lat, vm.SelectedTelepules.Long);
+            map.ZoomLevel = 12;
         }
     }
 }
